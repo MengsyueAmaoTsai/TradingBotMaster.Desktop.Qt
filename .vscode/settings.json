@@ -30,6 +30,10 @@
   "markdownlint.customRules": [],
   "markdownlint.config": {},
   // .toml
+  "[toml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
   "evenBetterToml.completion.maxKeys": 5,
   "evenBetterToml.formatter.alignComments": null,
   "evenBetterToml.formatter.alignEntries": null,

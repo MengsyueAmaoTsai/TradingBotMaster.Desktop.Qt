@@ -2,15 +2,11 @@
 name = "asd"
 version = ""
 description = ""
-authors = [
-    {name = "Mengsyue Amao Tsai", email = "mengsyue.tsai@outlook.com"},
-]
-dependencies = [
-    "pyside6>=6.6.1",
-]
+authors = [{ name = "Mengsyue Amao Tsai", email = "mengsyue.tsai@outlook.com" }]
+dependencies = ["pyside6>=6.6.1"]
 requires-python = ">=3.12,<3.13"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 [tool.scripts.pdm]
 main = "python ./src/__main__.py"
