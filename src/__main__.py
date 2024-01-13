@@ -1,6 +1,7 @@
 import sys
 from typing import List
 
+import picologging as logging
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
@@ -11,6 +12,9 @@ from env import (
     get_project_name,
     get_version,
 )
+
+logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
+logger = logging.getLogger()
 
 
 class DesktopApplication:
@@ -37,7 +41,7 @@ class DesktopApplication:
 
     def run(self) -> None:
         if not self.__qml_engine.rootObjects():
-            print("No any object in qml engine")
+            logger.error("No any object in qml engine.")
             sys.exit(-1)
 
         sys.exit(self.__qt_app.exec())
@@ -46,7 +50,7 @@ class DesktopApplication:
 class DesktopApplicationBuilder:
     def __init__(self, args: List[str]) -> None:
         self.__args = args
-        print("Args:", args)
+        logger.info(f"Args: {args}")
 
     def build(self) -> DesktopApplication:
         app = DesktopApplication()
