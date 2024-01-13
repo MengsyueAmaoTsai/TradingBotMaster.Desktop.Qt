@@ -251,4 +251,17 @@
     "W": "Warning",
     "E": "Hint"
   },
+  // flake8
+  "flake8.args": [],
+  "flake8.cwd": "${workspaceFolder}",
+  "flake8.ignorePatterns": [],
+  "flake8.importStrategy": "useBundled",
+  "flake8.interpreter": [],
+  "flake8.path": [],
+  "flake8.severity": {
+    "E": "Error",
+    "F": "Error",
+    "I": "Information",
+    "W": "Warning"
+  },
 }
