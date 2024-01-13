@@ -4,7 +4,7 @@ from typing import List
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
-from env import PROJECT_ROOT_PATH
+from env import APP_QML_NAME, PROJECT_ROOT_PATH, SOURCE_DIR
 
 
 class DesktopApplication:
@@ -18,7 +18,7 @@ class DesktopApplication:
         # app.setWindowIcon()
 
         # Initialize QML Engine
-        app_qml_path = PROJECT_ROOT_PATH / "src" / "App.qml"
+        app_qml_path = PROJECT_ROOT_PATH / SOURCE_DIR / APP_QML_NAME
         self.__qml_engine = QQmlApplicationEngine()
         self.__qml_engine.load(app_qml_path)
 
