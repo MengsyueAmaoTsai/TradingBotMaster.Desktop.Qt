@@ -10,39 +10,29 @@ SOURCE_DIR = "src"
 APP_QML_NAME = "App.qml"
 
 
-# TOML parsing
 def get_version() -> str:
-    version = ""
-    try:
-        with open(PROJECT_FILE, "r", encoding="utf-8") as project:
-            data = toml.load(project)
-            version = data["project"]["version"]
+    version = parse_project_meta().get("version", "")
 
-            return version
-
-    except FileNotFoundError:
-        print(f"Error: Could not find the {PROJECT_FILE} file.")
-        return version
-
-    except KeyError:
+    if not version:
         print("Error: Unable to find the correct fields for version.")
-        return version
+
+    return version
 
 
 def get_project_name() -> str:
-    name = ""
+    name = parse_project_meta().get("name", "")
 
+    if not name:
+        print("Error: Unable to find the correct fields for application name.")
+
+    return name
+
+
+def parse_project_meta() -> dict[str, str]:
     try:
         with open(PROJECT_FILE, "r", encoding="utf-8") as project:
-            data = toml.load(project)
-            name = data["project"]["name"]
-
-            return name
+            return toml.load(project).get("project", {})
 
     except FileNotFoundError:
         print(f"Error: Could not find the {PROJECT_FILE} file.")
-        return name
-
-    except KeyError:
-        print("Error: Unable to find the correct fields for application name.")
-        return name
+        return {}
