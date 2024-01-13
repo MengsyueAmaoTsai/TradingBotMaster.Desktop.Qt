@@ -1,5 +1,7 @@
 # Bot Master Desktop
 
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
 ## Description
 
 This repository hosts the source code for the "Bot Master Desktop" application, a desktop utility crafted with Python and Qt for Python. The application leverages the Model-View-ViewModel (MVVM) architectural pattern to provide a robust and scalable structure.

@@ -11,6 +11,8 @@ license = { text = "MIT" }
 [tool.pdm.scripts]
 dev = "python ./src/__main__.py"
 start = ""
+sort = "isort ./src --verbose"
+format_black = "black ./src"
 format = ""
 lint = ""
 build = ""
