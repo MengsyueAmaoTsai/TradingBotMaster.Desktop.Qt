@@ -11,5 +11,7 @@
         "davidanson.vscode-markdownlint",
         "ms-python.python",
         "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "ms-python.isort"
     ]
 }

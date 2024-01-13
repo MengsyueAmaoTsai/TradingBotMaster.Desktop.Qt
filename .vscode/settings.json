@@ -70,6 +70,19 @@
   "evenBetterToml.taplo.configFile.enabled": true,
   "evenBetterToml.taplo.configFile.path": null,
   // Python
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll": "always"
+    },
+    "editor.wordBasedSuggestions": false,
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.codeLens.symbolScopes": [
+      "!Module"
+    ],
+  },
   "python.activeStateToolPath": "state",
   "python.autoComplete.extraPaths": [],
   "python.createEnvironment.contentButton": "hide",
@@ -224,4 +237,17 @@
   "python.analysis.logLevel": "Information",
   "python.analysis.persistAllIndices": true,
   "python.analysis.typeshedPaths": [],
+  // isort
+  "isort.args": [
+    "--profile",
+    "black",
+  ],
+  "isort.check": false,
+  "isort.importStrategy": "useBundled",
+  "isort.interpreter": [],
+  "isort.path": [],
+  "isort.severity": {
+    "W": "Warning",
+    "E": "Hint"
+  },
 }
