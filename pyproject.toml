@@ -3,7 +3,11 @@ name = "RichillCapital.BotMaster.Desktop"
 version = "0.0.1"
 description = ""
 authors = [{ name = "Mengsyue Amao Tsai", email = "mengsyue.tsai@outlook.com" }]
-dependencies = ["pyside6>=6.6.1", "toml>=0.10.2"]
+dependencies = [
+    "pyside6>=6.6.1",
+    "toml>=0.10.2",
+    "picologging>=0.9.3",
+]
 requires-python = ">=3.12,<3.13"
 readme = "README.md"
 license = { text = "MIT" }
