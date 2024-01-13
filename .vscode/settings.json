@@ -264,4 +264,9 @@
     "I": "Information",
     "W": "Warning"
   },
+  // autopep8
+  "autopep8.args": [],
+  "autopep8.importStrategy": "useBundled",
+  "autopep8.interpreter": [],
+  "autopep8.path": [],
 }

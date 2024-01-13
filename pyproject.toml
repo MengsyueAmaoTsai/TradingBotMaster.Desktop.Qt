@@ -10,3 +10,11 @@ license = { text = "MIT" }
 
 [tool.pdm.scripts]
 dev = "python ./src/__main__.py"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "flake8>=7.0.0",
+    "isort>=5.13.2",
+    "black>=23.12.1",
+    "autopep8>=2.0.4",
+]
