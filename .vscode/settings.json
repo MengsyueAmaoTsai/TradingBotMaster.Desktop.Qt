@@ -251,6 +251,11 @@
     "W": "Warning",
     "E": "Hint"
   },
+  // Black
+  "black-formatter.args": [],
+  "black-formatter.importStrategy": "useBundled",
+  "black-formatter.interpreter": [],
+  "black-formatter.path": [],
   // flake8
   "flake8.args": [],
   "flake8.cwd": "${workspaceFolder}",
@@ -269,4 +274,20 @@
   "autopep8.importStrategy": "useBundled",
   "autopep8.interpreter": [],
   "autopep8.path": [],
+  // Pylint
+  "pylint.args": [],
+  "pylint.cwd": "${workspaceFolder}",
+  "pylint.ignorePatterns": [],
+  "pylint.importStrategy": "useBundled",
+  "pylint.interpreter": [],
+  "pylint.path": [],
+  "pylint.severity": {
+    "convention": "Information",
+    "error": "Error",
+    "fatal": "Error",
+    "refactor": "Hint",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  // Pyright
 }
