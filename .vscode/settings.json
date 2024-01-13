@@ -290,4 +290,20 @@
     "info": "Information"
   },
   // Pyright
+  "pyright.disableLanguageServices": false,
+  "pyright.disableOrganizeImports": false,
+  "python.pythonPath": "python",
+  // Mypy
+  "mypy-type-checker.args": [],
+  "mypy-type-checker.cwd": "${workspaceFolder}",
+  "mypy-type-checker.ignorePatterns": [],
+  "mypy-type-checker.importStrategy": "useBundled",
+  "mypy-type-checker.interpreter": [],
+  "mypy-type-checker.path": [],
+  "mypy-type-checker.preferDaemon": false,
+  "mypy-type-checker.reportingScope": "file",
+  "mypy-type-checker.severity": {
+    "error": "Error",
+    "note": "Information"
+  }
 }

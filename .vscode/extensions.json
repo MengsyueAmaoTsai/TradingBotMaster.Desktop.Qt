@@ -17,6 +17,7 @@
         "ms-python.flake8",
         "ms-python.autopep8",
         "ms-python.pylint",
-        "ms-pyright.pyright"
+        "ms-pyright.pyright",
+        "ms-python.mypy-type-checker"
     ]
 }
