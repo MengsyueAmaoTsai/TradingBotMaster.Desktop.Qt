@@ -71,6 +71,7 @@
   "evenBetterToml.taplo.configFile.path": null,
   // Python
   "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always",

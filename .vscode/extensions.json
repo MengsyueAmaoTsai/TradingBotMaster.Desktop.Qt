@@ -12,6 +12,7 @@
         "ms-python.python",
         "ms-python.debugpy",
         "ms-python.vscode-pylance",
-        "ms-python.isort"
+        "ms-python.isort",
+        "ms-python.black-formatter"
     ]
 }

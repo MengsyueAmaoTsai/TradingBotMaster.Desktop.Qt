@@ -16,7 +16,7 @@ class DesktopApplication:
         self.__qt_app.setApplicationName("<applicationName>")
         self.__qt_app.setApplicationDisplayName("<applicationDisplayName>")
         # app.setWindowIcon()
-        
+
         # Initialize QML Engine
         app_qml_path = PROJECT_ROOT_PATH / "src" / "App.qml"
         self.__qml_engine = QQmlApplicationEngine()
@@ -26,9 +26,9 @@ class DesktopApplication:
     def create_builder(cls, args: List[str]) -> "DesktopApplicationBuilder":
         """ """
         builder = DesktopApplicationBuilder(args)
-    
+
         return builder
-    
+
     def run(self) -> None:
         if not self.__qml_engine.rootObjects():
             print("No any object in qml engine")
@@ -36,16 +36,16 @@ class DesktopApplication:
 
         sys.exit(self.__qt_app.exec())
 
-    
+
 class DesktopApplicationBuilder:
-    
     def __init__(self, args: List[str]) -> None:
         self.__args = args
         print("Args:", args)
 
     def build(self) -> DesktopApplication:
         app = DesktopApplication()
-        return app 
+        return app
+
 
 builder = DesktopApplication.create_builder(sys.argv)
 app = builder.build()
