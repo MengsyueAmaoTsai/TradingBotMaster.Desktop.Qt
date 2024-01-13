@@ -7,10 +7,13 @@
     "richillcapital",
     "Tsai"
   ],
-  // .json
+  // Json
   "[json][jsonc][jsonl]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always"
+    }
   },
   "json.schemas": [],
   "json.schemaDownload.enable": true,
@@ -19,7 +22,7 @@
   "json.format.keepLines": false,
   "json.maxItemsComputed": 5000,
   "json.trace.server": "off",
-  // .md
+  // Markdown
   "markdownlint.run": "onSave",
   "markdownlint.lintWorkspaceGlobs": [
     "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
@@ -31,7 +34,7 @@
   "markdownlint.ignore": ".markdownlintignore",
   "markdownlint.customRules": [],
   "markdownlint.config": {},
-  // .toml
+  // TOML
   "[toml]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
