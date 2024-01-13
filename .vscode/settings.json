@@ -1,0 +1,156 @@
+{
+  "cSpell.words": [
+    "Amao",
+    "Mengsyue",
+    "pyside",
+    "Tsai"
+  ],
+  // .json
+  "[json][jsonc][jsonl]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "json.schemas": [],
+  "json.schemaDownload.enable": true,
+  "json.validate.enable": true,
+  "json.format.enable": true,
+  "json.format.keepLines": false,
+  "json.maxItemsComputed": 5000,
+  "json.trace.server": "off",
+  // .md
+  "markdownlint.run": "onSave",
+  "markdownlint.lintWorkspaceGlobs": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "!**/bower_components",
+    "!**/node_modules",
+    "!**/vendor",
+    "!**/.git"
+  ],
+  "markdownlint.ignore": ".markdownlintignore",
+  "markdownlint.customRules": [],
+  "markdownlint.config": {},
+  // .toml
+  "evenBetterToml.completion.maxKeys": 5,
+  "evenBetterToml.formatter.alignComments": null,
+  "evenBetterToml.formatter.alignEntries": null,
+  "evenBetterToml.formatter.allowedBlankLines": null,
+  "evenBetterToml.formatter.arrayAutoCollapse": null,
+  "evenBetterToml.formatter.arrayAutoExpand": null,
+  "evenBetterToml.formatter.arrayTrailingComma": null,
+  "evenBetterToml.formatter.columnWidth": null,
+  "evenBetterToml.formatter.compactArrays": null,
+  "evenBetterToml.formatter.compactEntries": null,
+  "evenBetterToml.formatter.compactInlineTables": null,
+  "evenBetterToml.formatter.crlf": null,
+  "evenBetterToml.formatter.indentEntries": null,
+  "evenBetterToml.formatter.indentString": null,
+  "evenBetterToml.formatter.indentTables": null,
+  "evenBetterToml.formatter.inlineTableExpand": null,
+  "evenBetterToml.formatter.reorderArrays": null,
+  "evenBetterToml.formatter.reorderKeys": null,
+  "evenBetterToml.formatter.trailingNewline": null,
+  "evenBetterToml.rules": [],
+  "evenBetterToml.schema.associations": {},
+  "evenBetterToml.schema.cache.diskExpiration": 600,
+  "evenBetterToml.schema.cache.memoryExpiration": 60,
+  "evenBetterToml.schema.catalogs": [
+    "https://www.schemastore.org/api/json/catalog.json"
+  ],
+  "evenBetterToml.schema.enabled": true,
+  "evenBetterToml.schema.links": false,
+  "evenBetterToml.semanticTokens": false,
+  "evenBetterToml.syntax.semanticTokens": true,
+  "evenBetterToml.taplo.bundled": true,
+  "evenBetterToml.taplo.configFile.enabled": true,
+  "evenBetterToml.taplo.configFile.path": null,
+  // Python
+  "python.activeStateToolPath": "state",
+  "python.autoComplete.extraPaths": [],
+  "python.createEnvironment.contentButton": "hide",
+  "python.createEnvironment.trigger": "prompt",
+  "python.defaultInterpreterPath": "python",
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.globalModuleInstallation": false,
+  "python.languageServer": "Default",
+  "python.missingPackage.severity": "Hint",
+  "python.pipenvPath": "pipenv",
+  "python.poetryPath": "poetry",
+  "python.REPL.enableREPLSmartSend": true,
+  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.executeInFileDir": false,
+  "python.terminal.focusAfterLaunch": false,
+  "python.terminal.launchArgs": [],
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.testing.cwd": null,
+  "python.testing.debugPort": 3000,
+  "python.testing.promptToConfigure": true,
+  "python.testing.pytestArgs": [],
+  "python.testing.pytestEnabled": false,
+  "python.testing.pytestPath": "pytest",
+  "python.testing.unittestEnabled": false,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    ".",
+    "-p",
+    "*test*.py"
+  ],
+  // Pylance
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.include": [],
+  "python.analysis.exclude": [],
+  "python.analysis.ignore": [],
+  "python.analysis.stubPath": "typings",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.extraPaths": [],
+  "python.analysis.diagnosticSeverityOverrides": {},
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.indexing": true,
+  "python.analysis.userFileIndexingLimit": 2000,
+  "python.analysis.packageIndexDepths": [
+    {
+      "name": "sklearn",
+      "depth": 2
+    },
+    {
+      "name": "matplotlib",
+      "depth": 2
+    },
+    {
+      "name": "scipy",
+      "depth": 2
+    },
+    {
+      "name": "django",
+      "depth": 2
+    },
+    {
+      "name": "flask",
+      "depth": 2
+    },
+    {
+      "name": "fastapi",
+      "depth": 2
+    }
+  ],
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.completeFunctionParens": false,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.inlayHints.functionReturnTypes": false,
+  "python.analysis.inlayHints.callArgumentNames": "off",
+  "python.analysis.inlayHints.pytestParameters": false,
+  "python.analysis.fixAll": [],
+  "python.analysis.enablePytestExtra": true,
+  "python.analysis.enablePytestSupport": true,
+  "python.analysis.autoFormatStrings": false,
+  "python.analysis.addImport.exactMatchOnly": false,
+  "python.analysis.enableSyncServer": false,
+  "python.analysis.extraCommitChars": true,
+  "python.analysis.gotoDefinitionInStringLiteral": true,
+  "python.analysis.logLevel": "Information",
+  "python.analysis.persistAllIndices": true,
+  "python.analysis.typeshedPaths": [],
+}
