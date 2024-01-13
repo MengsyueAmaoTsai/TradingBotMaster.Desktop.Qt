@@ -16,7 +16,6 @@ from env import (
 logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 logger = logging.getLogger()
 
-
 class DesktopApplication:
     def __init__(self) -> None:
         # Initialize Qt Gui app

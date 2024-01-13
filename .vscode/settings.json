@@ -7,6 +7,18 @@
     "richillcapital",
     "Tsai"
   ],
+  // Github Copilot
+  "github.copilot.advanced": {},
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.chat.localeOverride": "auto",
+  "github.copilot.chat.welcomeMessage": "first",
+  "github.copilot.editor.enableCodeActions": true,
   // Json
   "[json][jsonc][jsonl]": {
     "editor.formatOnSave": true,
