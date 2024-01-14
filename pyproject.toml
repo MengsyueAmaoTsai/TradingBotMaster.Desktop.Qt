@@ -20,12 +20,4 @@ test = ""
 publish = ""
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "flake8>=7.0.0",
-    "isort>=5.13.2",
-    "black>=23.12.1",
-    "autopep8>=2.0.4",
-    "pylint>=3.0.3",
-    "pyright>=1.1.345",
-    "mypy>=1.8.0",
-]
+dev = ["ruff>=0.1.13"]

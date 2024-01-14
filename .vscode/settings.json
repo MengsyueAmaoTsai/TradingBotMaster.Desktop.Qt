@@ -52,24 +52,24 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "evenBetterToml.completion.maxKeys": 5,
-  "evenBetterToml.formatter.alignComments": null,
-  "evenBetterToml.formatter.alignEntries": null,
-  "evenBetterToml.formatter.allowedBlankLines": null,
-  "evenBetterToml.formatter.arrayAutoCollapse": null,
-  "evenBetterToml.formatter.arrayAutoExpand": null,
-  "evenBetterToml.formatter.arrayTrailingComma": null,
-  "evenBetterToml.formatter.columnWidth": null,
-  "evenBetterToml.formatter.compactArrays": null,
-  "evenBetterToml.formatter.compactEntries": null,
-  "evenBetterToml.formatter.compactInlineTables": null,
-  "evenBetterToml.formatter.crlf": null,
-  "evenBetterToml.formatter.indentEntries": null,
-  "evenBetterToml.formatter.indentString": null,
-  "evenBetterToml.formatter.indentTables": null,
-  "evenBetterToml.formatter.inlineTableExpand": null,
-  "evenBetterToml.formatter.reorderArrays": null,
-  "evenBetterToml.formatter.reorderKeys": null,
-  "evenBetterToml.formatter.trailingNewline": null,
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.alignEntries": false,
+  "evenBetterToml.formatter.allowedBlankLines": 2,
+  "evenBetterToml.formatter.arrayAutoCollapse": true,
+  "evenBetterToml.formatter.arrayAutoExpand": true,
+  "evenBetterToml.formatter.arrayTrailingComma": true,
+  "evenBetterToml.formatter.columnWidth": 80,
+  "evenBetterToml.formatter.compactArrays": true,
+  "evenBetterToml.formatter.compactEntries": false,
+  "evenBetterToml.formatter.compactInlineTables": false,
+  "evenBetterToml.formatter.crlf": false,
+  "evenBetterToml.formatter.indentEntries": false,
+  "evenBetterToml.formatter.indentString": "  ",
+  "evenBetterToml.formatter.indentTables": false,
+  "evenBetterToml.formatter.inlineTableExpand": true,
+  "evenBetterToml.formatter.reorderArrays": false,
+  "evenBetterToml.formatter.reorderKeys": false,
+  "evenBetterToml.formatter.trailingNewline": true,
   "evenBetterToml.rules": [],
   "evenBetterToml.schema.associations": {},
   "evenBetterToml.schema.cache.diskExpiration": 600,
@@ -83,10 +83,10 @@
   "evenBetterToml.syntax.semanticTokens": true,
   "evenBetterToml.taplo.bundled": true,
   "evenBetterToml.taplo.configFile.enabled": true,
-  "evenBetterToml.taplo.configFile.path": null,
+  "evenBetterToml.taplo.configFile.path": "",
   // Python
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always",
@@ -117,7 +117,7 @@
   "python.terminal.focusAfterLaunch": false,
   "python.terminal.launchArgs": [],
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
-  "python.testing.cwd": null,
+  "python.testing.cwd": "",
   "python.testing.debugPort": 3000,
   "python.testing.promptToConfigure": true,
   "python.testing.pytestArgs": [],
@@ -253,72 +253,22 @@
   "python.analysis.logLevel": "Information",
   "python.analysis.persistAllIndices": true,
   "python.analysis.typeshedPaths": [],
-  // isort
-  "isort.args": [
-    "--profile",
-    "black",
-  ],
-  "isort.check": false,
-  "isort.importStrategy": "useBundled",
-  "isort.interpreter": [],
-  "isort.path": [],
-  "isort.severity": {
-    "W": "Warning",
-    "E": "Hint"
+  // Ruff
+  "ruff.codeAction.disableRuleComment": {
+    "enable": true
   },
-  // Black
-  "black-formatter.args": [],
-  "black-formatter.importStrategy": "useBundled",
-  "black-formatter.interpreter": [],
-  "black-formatter.path": [],
-  // flake8
-  "flake8.args": [],
-  "flake8.cwd": "${workspaceFolder}",
-  "flake8.ignorePatterns": [],
-  "flake8.importStrategy": "useBundled",
-  "flake8.interpreter": [],
-  "flake8.path": [],
-  "flake8.severity": {
-    "E": "Error",
-    "F": "Error",
-    "I": "Information",
-    "W": "Warning"
+  "ruff.codeAction.fixViolation": {
+    "enable": true
   },
-  // autopep8
-  "autopep8.args": [],
-  "autopep8.importStrategy": "useBundled",
-  "autopep8.interpreter": [],
-  "autopep8.path": [],
-  // Pylint
-  "pylint.args": [],
-  "pylint.cwd": "${workspaceFolder}",
-  "pylint.ignorePatterns": [],
-  "pylint.importStrategy": "useBundled",
-  "pylint.interpreter": [],
-  "pylint.path": [],
-  "pylint.severity": {
-    "convention": "Information",
-    "error": "Error",
-    "fatal": "Error",
-    "refactor": "Hint",
-    "warning": "Warning",
-    "info": "Information"
-  },
-  // Pyright
-  "pyright.disableLanguageServices": false,
-  "pyright.disableOrganizeImports": false,
-  "python.pythonPath": "python",
-  // Mypy
-  "mypy-type-checker.args": [],
-  "mypy-type-checker.cwd": "${workspaceFolder}",
-  "mypy-type-checker.ignorePatterns": [],
-  "mypy-type-checker.importStrategy": "useBundled",
-  "mypy-type-checker.interpreter": [],
-  "mypy-type-checker.path": [],
-  "mypy-type-checker.preferDaemon": false,
-  "mypy-type-checker.reportingScope": "file",
-  "mypy-type-checker.severity": {
-    "error": "Error",
-    "note": "Information"
-  }
+  "ruff.enable": true,
+  "ruff.fixAll": true,
+  "ruff.format.args": [],
+  "ruff.importStrategy": "fromEnvironment",
+  "ruff.interpreter": [],
+  "ruff.lint.args": [],
+  "ruff.lint.run": "onType",
+  "ruff.organizeImports": true,
+  "ruff.path": [],
+  "ruff.showNotifications": "off",
+  "ruff.trace.server": "off",
 }

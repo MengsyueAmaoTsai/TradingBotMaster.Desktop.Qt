@@ -2,14 +2,19 @@ import sys
 from typing import List
 
 import picologging as logging
+from env import (
+    APP_QML_NAME,
+    PROJECT_ROOT_PATH,
+    SOURCE_DIR,
+    get_project_name,
+    get_version,
+)
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
-from env import (APP_QML_NAME, PROJECT_ROOT_PATH, SOURCE_DIR, get_project_name,
-                 get_version)
-
 logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 logger = logging.getLogger()
+
 
 class DesktopApplication:
     def __init__(self) -> None:

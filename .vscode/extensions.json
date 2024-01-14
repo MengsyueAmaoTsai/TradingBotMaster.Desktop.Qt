@@ -13,12 +13,6 @@
         "ms-python.python",
         "ms-python.debugpy",
         "ms-python.vscode-pylance",
-        "ms-python.isort",
-        "ms-python.black-formatter",
-        "ms-python.flake8",
-        "ms-python.autopep8",
-        "ms-python.pylint",
-        "ms-pyright.pyright",
-        "ms-python.mypy-type-checker",
+        "charliermarsh.ruff"
     ]
 }
