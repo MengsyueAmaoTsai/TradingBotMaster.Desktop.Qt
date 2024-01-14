@@ -8,8 +8,8 @@ records = get_trading_view_records(Path("data/trading-view/TV-PL-Binance_ETHUSDT
 
 
 class TradeType(Enum):
-    Buy = "Buy"
-    Sell = "Sell"
+    BUY = "Buy"
+    SELL = "Sell"
 
 @dataclass(frozen=True)
 class Execution():
@@ -20,7 +20,7 @@ class Execution():
     price: float
 
 for record in records:
-    trade_type = TradeType.Buy if record.type in ("Entry Long", "Exit Short") else TradeType.Sell
+    trade_type = TradeType.BUY if record.type in ("Entry Long", "Exit Short") else TradeType.SELL
 
     execution = Execution(time=record.time, trade_type=trade_type, quantity=record.quantity, price=record.price)
 
