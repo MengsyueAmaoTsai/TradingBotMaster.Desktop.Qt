@@ -235,7 +235,7 @@
       "depth": 2
     }
   ],
-  "python.analysis.autoImportCompletions": false,
+  "python.analysis.autoImportCompletions": true,
   "python.analysis.importFormat": "absolute",
   "python.analysis.completeFunctionParens": false,
   "python.analysis.inlayHints.variableTypes": false,
