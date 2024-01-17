@@ -17,38 +17,37 @@ logger = logging.getLogger()
 
 class DesktopApplication:
     def __init__(self) -> None:
-        # Initialize Qt Gui app
-        app_name = get_project_name()
         version = get_version()
         app_qml_path = PROJECT_ROOT_PATH / SOURCE_DIR / APP_QML_NAME
 
         self.__qt_app = QGuiApplication()
+        self.__qml_engine = QQmlApplicationEngine()
+
+        # Set application information.
         self.__qt_app.setOrganizationName("Richill Capital")
         self.__qt_app.setOrganizationDomain("richillcapital.com")
-        self.__qt_app.setApplicationName(f"<applicationName> {app_name}")
+        self.__qt_app.setApplicationName(f"<applicationName> {get_project_name()}")
         self.__qt_app.setApplicationDisplayName(f"<applicationDisplayName> {version}")
-        # app.setWindowIcon()
+        self.__qt_app.setApplicationVersion(version)
 
-        # Initialize QML Engine
-        self.__qml_engine = QQmlApplicationEngine()
+        # Load the main qml file.
         self.__qml_engine.load(app_qml_path)
+
+        if not self.__qml_engine.rootObjects():
+            logger.error("Application failed to load.")
+            sys.exit(-1)
 
     @classmethod
     def create_builder(cls, args: list[str]) -> "DesktopApplicationBuilder":
         return DesktopApplicationBuilder(args)
 
     def run(self) -> None:
-        if not self.__qml_engine.rootObjects():
-            logger.error("No any object in qml engine.")
-            sys.exit(-1)
-
         sys.exit(self.__qt_app.exec())
 
 
 class DesktopApplicationBuilder:
     def __init__(self, args: list[str]) -> None:
         self.__args = args
-
         logger.info(f"Args: {args}")
 
     def build(self) -> DesktopApplication:
