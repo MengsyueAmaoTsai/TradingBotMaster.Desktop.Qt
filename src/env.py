@@ -7,6 +7,7 @@ PROJECT_ROOT_PATH = Path(os.path.abspath(os.getcwd()))
 PROJECT_FILE = "pyproject.toml"
 
 SOURCE_DIR = "src"
+ASSERTS_DIR = "assets"
 
 APP_QML_NAME = "App.qml"
 

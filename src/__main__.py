@@ -3,12 +3,13 @@ import sys
 import picologging as logging
 from env import (
     APP_QML_NAME,
+    ASSERTS_DIR,
     PROJECT_ROOT_PATH,
     SOURCE_DIR,
     get_project_name,
     get_version,
 )
-from PySide6.QtGui import QGuiApplication
+from PySide6.QtGui import QGuiApplication, QIcon
 from PySide6.QtQml import QQmlApplicationEngine
 
 logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
@@ -20,6 +21,9 @@ class DesktopApplication(QGuiApplication):
         super().__init__(args)
         version = get_version()
         app_qml_path = PROJECT_ROOT_PATH / SOURCE_DIR / APP_QML_NAME
+        icon_path = PROJECT_ROOT_PATH / ASSERTS_DIR / "logo.jpg"
+        icon = QIcon(str(icon_path))
+        logger.info(icon_path)
 
         # Set application information.
         self.setOrganizationName("Richill Capital")
@@ -27,6 +31,7 @@ class DesktopApplication(QGuiApplication):
         self.setApplicationName(f"<applicationName> {get_project_name()}")
         self.setApplicationDisplayName(f"<applicationDisplayName> {version}")
         self.setApplicationVersion(version)
+        self.setWindowIcon(icon)
 
         # Load the main qml file.
         self.__qml_engine = QQmlApplicationEngine()
