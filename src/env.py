@@ -1,8 +1,9 @@
 from pathlib import Path
 
 import toml
+import os
 
-PROJECT_ROOT_PATH = Path(__file__).parent.parent
+PROJECT_ROOT_PATH = Path(os.path.abspath(os.getcwd()))
 PROJECT_FILE = "pyproject.toml"
 
 SOURCE_DIR = "src"
@@ -20,12 +21,12 @@ def get_version() -> str:
 
 
 def get_project_name() -> str:
-    name = parse_project_meta().get("name", "")
+    project_name = parse_project_meta().get("name", "")
 
-    if not name:
+    if not project_name:
         print("Error: Unable to find the correct fields for application name.")
 
-    return name
+    return project_name
 
 
 def parse_project_meta() -> dict[str, str]:

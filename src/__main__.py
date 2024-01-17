@@ -1,5 +1,4 @@
 import sys
-from typing import List
 
 import picologging as logging
 from env import (
@@ -35,7 +34,7 @@ class DesktopApplication:
         self.__qml_engine.load(app_qml_path)
 
     @classmethod
-    def create_builder(cls, args: List[str]) -> "DesktopApplicationBuilder":
+    def create_builder(cls, args: list[str]) -> "DesktopApplicationBuilder":
         return DesktopApplicationBuilder(args)
 
     def run(self) -> None:
@@ -47,11 +46,15 @@ class DesktopApplication:
 
 
 class DesktopApplicationBuilder:
-    def __init__(self, args: List[str]) -> None:
+    def __init__(self, args: list[str]) -> None:
         self.__args = args
+
         logger.info(f"Args: {args}")
 
     def build(self) -> DesktopApplication:
+        if ("--reload" in self.__args) or ("-r" in self.__args):
+            logger.info("Enable hot reload")
+
         app = DesktopApplication()
         return app
 

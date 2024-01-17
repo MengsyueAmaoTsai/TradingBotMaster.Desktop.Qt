@@ -9,7 +9,7 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [tool.pdm.scripts]
-dev = "python ./src/__main__.py"
+dev = "python ./src/__main__.py -r"
 start = ""
 format = "ruff format ."
 lint = "ruff check ."
