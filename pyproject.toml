@@ -11,6 +11,8 @@ license = { text = "MIT" }
 [tool.pdm.scripts]
 dev = "python ./src/__main__.py -r"
 start = ""
+format_qml = "pyside6-qmlformat"
+lint_qml = "pyside6-qmllint"
 format = "ruff format ."
 lint = "ruff check ."
 build = ""
