@@ -16,6 +16,8 @@ class Environments(str, Enum):
 class DesktopEnvironment(IEnvironment):
     """Desktop environment."""
 
+    __slot__ = ("__name", "__content_root_path", "__assets_path")
+
     def __init__(self, name: str, content_root_path: Path, assets_path: str) -> None:
         """Initialize the environment."""
         self.__name = name

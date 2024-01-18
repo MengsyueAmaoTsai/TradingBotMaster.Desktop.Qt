@@ -76,6 +76,10 @@ class DesktopApplication(QGuiApplication):
             self.logger.error("Application failed to load.")
             sys.exit(-1)
 
+        self.logger.info("Application started.")
+        self.logger.info(f"Environment: {self.environment}")
+        self.logger.info(f"Content root path: {self.environment.content_root_path}")
+
         sys.exit(self.exec())
 
 
