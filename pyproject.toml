@@ -1,6 +1,6 @@
 [project]
 name = "RichillCapital.BotMaster.Desktop"
-version = "0.0.1"
+version = "1.0.0"
 description = ""
 authors = [{ name = "Mengsyue Amao Tsai", email = "mengsyue.tsai@outlook.com" }]
 dependencies = ["pyside6>=6.6.1", "toml>=0.10.2", "picologging>=0.9.3"]
@@ -9,8 +9,8 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [tool.pdm.scripts]
-dev = "python ./src/__main__.py -r"
-start = ""
+dev = "python ./src/main.py -r"
+start = "python ./src/main.py"
 format_qml = "pyside6-qmlformat"
 lint_qml = "pyside6-qmllint"
 format = "ruff format ."
