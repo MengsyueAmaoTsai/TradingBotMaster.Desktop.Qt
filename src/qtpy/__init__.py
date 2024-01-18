@@ -101,3 +101,6 @@ class DesktopApplicationBuilder:
         )
 
         return app
+
+
+__all__ = ["DesktopApplication", "DesktopApplicationBuilder"]
