@@ -7,36 +7,56 @@ from picologging import DEBUG, Logger, getLogger
 from PySide6.QtGui import QGuiApplication, QIcon
 from PySide6.QtQml import QQmlApplicationEngine
 
-from .environments import Environments
+from .environments import DesktopEnvironment, Environments, IEnvironment
 from .project import PythonProject
 
 
 class DesktopApplication(QGuiApplication):
     """Desktop application."""
 
-    def __init__(self, args: list[str], content_root_path: Path, assets_path: str) -> None:
+    def __init__(self, args: list[str], environment: IEnvironment) -> None:
         """Initialize the application."""
         super().__init__(args)
+        # Initialize the environment.
+        self.__environment = environment
+
+        # Initialize the default logger.
         picologging.basicConfig(level=DEBUG, format="%(levelname)s: %(message)s")
         self.__logger = getLogger(DesktopApplication.__name__)
 
         if ("--reload" in args) or ("-r" in args):
             self.logger.info("Enable hot reload")
 
-        icon_path = content_root_path / assets_path / "logo.jpg"
+        icon_path = self.environment.content_root_path / self.environment.assets_path / "logo.jpg"
         icon = QIcon(str(icon_path))
         self.setWindowIcon(icon)
 
-        qml_path = content_root_path / "src" / "App.qml"
-
         # Load the main qml file.
+        qml_path = self.environment.content_root_path / "src" / "App.qml"
         self.__qml_engine = QQmlApplicationEngine()
         self.__qml_engine.load(qml_path)
+
+    @property
+    def configuration(self) -> object:
+        raise NotImplementedError()
+
+    @property
+    def environment(self) -> IEnvironment:
+        """Get the environment."""
+        return self.__environment
+
+    @property
+    def lifetime(self) -> object:
+        raise NotImplementedError()
 
     @property
     def logger(self) -> Logger:
         """Get the logger."""
         return self.__logger
+
+    @property
+    def services(self) -> object:
+        raise NotImplementedError()
 
     @classmethod
     def create_builder(
@@ -45,12 +65,10 @@ class DesktopApplication(QGuiApplication):
         app_name: str = "",
         content_root_path: str = "",
         asserts_path: str = "",
-        environment_name: str = "",
+        environment: str = "",
     ) -> "DesktopApplicationBuilder":
         """Create a builder for the application."""
-        return DesktopApplicationBuilder(
-            args, app_name, content_root_path, asserts_path, environment_name
-        )
+        return DesktopApplicationBuilder(args, app_name, content_root_path, asserts_path, environment)
 
     def run(self) -> None:
         """Run the application."""
@@ -87,15 +105,16 @@ class DesktopApplicationBuilder:
         QGuiApplication.setOrganizationName("Richill Capital")
         QGuiApplication.setOrganizationDomain("richillcapital.com")
         QGuiApplication.setApplicationName(f"ApplicationName = {app_name} - {version}")
-        QGuiApplication.setApplicationDisplayName(
-            f"ApplicationDisplayName = {app_name} - {version}"
-        )
+        QGuiApplication.setApplicationDisplayName(f"ApplicationDisplayName = {app_name} - {version}")
         QGuiApplication.setApplicationVersion(version)
 
         app = DesktopApplication(
             self.__args,
-            content_root_path=Path(self.__content_root_path),
-            assets_path=self.__assets_path,
+            DesktopEnvironment(
+                environment_name=self.__environment_name,
+                content_root_path=Path(self.__content_root_path),
+                assets_path=self.__assets_path,
+            ),
         )
 
         return app
