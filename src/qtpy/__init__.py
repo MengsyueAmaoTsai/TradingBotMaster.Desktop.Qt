@@ -25,14 +25,11 @@ class DesktopApplication(QGuiApplication):
         if ("--reload" in args) or ("-r" in args):
             self.logger.info("Enable hot reload")
 
-        icon_path = self.environment.content_root_path / self.environment.assets_path / "logo.jpg"
-        icon = QIcon(str(icon_path))
-        self.setWindowIcon(icon)
+        self.setWindowIcon(QIcon(str(self.environment.assets_path / "logo.jpg")))
 
         # Load the main qml file.
-        qml_path = self.environment.content_root_path / "src" / "App.qml"
         self.__qml_engine = QQmlApplicationEngine()
-        self.__qml_engine.load(qml_path)
+        self.__qml_engine.load(self.environment.source_path / "App.qml")
 
     @property
     def configuration(self) -> object:

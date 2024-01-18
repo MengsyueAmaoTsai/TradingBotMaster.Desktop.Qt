@@ -11,8 +11,13 @@ class IEnvironment(Protocol):
         ...
 
     @property
-    def assets_path(self) -> str:
+    def assets_path(self) -> Path:
         """Return the assets path."""
+        ...
+
+    @property
+    def source_path(self) -> Path:
+        """Return the source path."""
         ...
 
     def is_development(self) -> bool:

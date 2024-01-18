@@ -20,6 +20,7 @@ class DesktopEnvironment(IEnvironment):
     __slot__ = ("__name", "__content_root_path", "__assets_path")
 
     DEFAULT_ASSETS_PATH = "assets"
+    DEFAULT_SOURCE_PATH = "src"
 
     def __init__(self, name: str, content_root_path: str, assets_path: str) -> None:
         """Initialize the environment."""
@@ -35,9 +36,15 @@ class DesktopEnvironment(IEnvironment):
 
     @property
     @override
-    def assets_path(self) -> str:
+    def assets_path(self) -> Path:
         """Return the assets path."""
-        return self.__assets_path
+        return self.content_root_path / self.__assets_path
+
+    @property
+    @override
+    def source_path(self) -> Path:
+        """Return the source path."""
+        return self.content_root_path / self.DEFAULT_SOURCE_PATH
 
     @override
     def is_development(self) -> bool:
