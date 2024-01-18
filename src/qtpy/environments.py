@@ -1,3 +1,4 @@
+import os
 from enum import Enum
 from pathlib import Path
 from typing import override
@@ -18,11 +19,13 @@ class DesktopEnvironment(IEnvironment):
 
     __slot__ = ("__name", "__content_root_path", "__assets_path")
 
-    def __init__(self, name: str, content_root_path: Path, assets_path: str) -> None:
+    DEFAULT_ASSETS_PATH = "assets"
+
+    def __init__(self, name: str, content_root_path: str, assets_path: str) -> None:
         """Initialize the environment."""
-        self.__name = name
-        self.__content_root_path = content_root_path
-        self.__assets_path = assets_path
+        self.__name = name or Environments.DEVELOPMENT
+        self.__content_root_path = Path(content_root_path or os.getcwd())
+        self.__assets_path = assets_path or self.DEFAULT_ASSETS_PATH
 
     @property
     @override

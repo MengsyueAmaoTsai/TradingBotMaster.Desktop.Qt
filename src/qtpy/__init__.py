@@ -1,13 +1,11 @@
-import os
 import sys
-from pathlib import Path
 
 import picologging
 from picologging import DEBUG, Logger, getLogger
 from PySide6.QtGui import QGuiApplication, QIcon
 from PySide6.QtQml import QQmlApplicationEngine
 
-from .environments import DesktopEnvironment, Environments, IEnvironment
+from .environments import DesktopEnvironment, IEnvironment
 from .project import PythonProject
 
 
@@ -97,12 +95,7 @@ class DesktopApplicationBuilder:
         """Initialize the builder."""
         self.__args = args
         self.__app_name = app_name
-
-        self.__environment = DesktopEnvironment(
-            name=environment_name or Environments.DEVELOPMENT,
-            content_root_path=Path(content_root_path or os.getcwd()),
-            assets_path=assets_path or "assets",
-        )
+        self.__environment = DesktopEnvironment(environment_name, content_root_path, assets_path)
 
     @property
     def configuration(self) -> object:
