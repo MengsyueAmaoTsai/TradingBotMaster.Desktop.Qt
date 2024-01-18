@@ -1,5 +1,6 @@
-from qtpy import DesktopApplication
 import sys
+from .qtpy import DesktopApplication
 
-app = DesktopApplication.create_builder(sys.argv).build()
-app.run()
+if __name__ == "__main__":
+    app = DesktopApplication.create_builder(sys.argv).build()
+    app.run()
