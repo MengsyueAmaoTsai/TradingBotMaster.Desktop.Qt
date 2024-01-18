@@ -17,7 +17,7 @@ This repository hosts the source code for the "Bot Master Desktop" application, 
 ### Install Dependencies
 
 ```powershell
-pdm install
+pdm install && pdm gen_pyi
 ```
 
 ### Run as Development

@@ -20,6 +20,7 @@ lint_f = "ruff cehck . --fix"
 lint_w = "ruff check . --watch"
 check = { composite = ["pdm run lint_f", "pdm run format"] } 
 
+gen_pyi = "pyside6-genpyi all"
 build = ""
 test = ""
 publish = ""
