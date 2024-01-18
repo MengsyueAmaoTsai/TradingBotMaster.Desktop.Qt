@@ -11,10 +11,15 @@ license = { text = "MIT" }
 [tool.pdm.scripts]
 dev = "python ./src/main.py -r"
 start = "python ./src/main.py"
+
 format_qml = "pyside6-qmlformat"
 lint_qml = "pyside6-qmllint"
 format = "ruff format ."
 lint = "ruff check ."
+lint_f = "ruff cehck . --fix"
+lint_w = "ruff check . --watch"
+check = { composite = ["pdm run lint_f", "pdm run format"] } 
+
 build = ""
 test = ""
 publish = ""

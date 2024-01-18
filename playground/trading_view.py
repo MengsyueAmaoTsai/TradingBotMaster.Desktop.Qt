@@ -50,7 +50,7 @@ file_path = Path(
 def get_trading_view_records(path: Path) -> list[TradingViewCsvRecord]:
     records: list[TradingViewCsvRecord] = []
 
-    with open(path, mode="r", encoding="utf-8") as raw_data:
+    with open(path, encoding="utf-8") as raw_data:
         rows: list[str] = raw_data.readlines()
         _ = rows.pop(0)
         rows.reverse()

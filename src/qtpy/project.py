@@ -1,7 +1,8 @@
-import toml
 import os
 from pathlib import Path
 from typing import Final
+
+import toml
 
 
 class PythonProject:
@@ -25,7 +26,7 @@ class PythonProject:
         project_path = Path(os.getcwd()) / cls.__PROJECT_FILE
 
         try:
-            with open(project_path, "r", encoding="utf-8") as project:
+            with open(project_path, encoding="utf-8") as project:
                 return toml.load(project).get("project", {})
 
         except FileNotFoundError:

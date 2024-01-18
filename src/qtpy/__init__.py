@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 import picologging
-from picologging import getLogger, DEBUG, Logger
+from picologging import DEBUG, Logger, getLogger
 from PySide6.QtGui import QGuiApplication, QIcon
 from PySide6.QtQml import QQmlApplicationEngine
 
@@ -14,9 +14,7 @@ from .project import PythonProject
 class DesktopApplication(QGuiApplication):
     """Desktop application."""
 
-    def __init__(
-        self, args: list[str], content_root_path: Path, assets_path: str
-    ) -> None:
+    def __init__(self, args: list[str], content_root_path: Path, assets_path: str) -> None:
         """Initialize the application."""
         super().__init__(args)
         picologging.basicConfig(level=DEBUG, format="%(levelname)s: %(message)s")
