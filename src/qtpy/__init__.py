@@ -93,9 +93,37 @@ class DesktopApplicationBuilder:
         """Initialize the builder."""
         self.__args = args
         self.__app_name = app_name
-        self.__content_root_path = content_root_path or os.getcwd()
-        self.__assets_path = assets_path or "assets"
-        self.__environment_name = environment_name or Environments.DEVELOPMENT
+
+        self.__environment = DesktopEnvironment(
+            name=environment_name or Environments.DEVELOPMENT,
+            content_root_path=Path(content_root_path or os.getcwd()),
+            assets_path=assets_path or "assets",
+        )
+
+    @property
+    def configuration(self) -> object:
+        raise NotImplementedError()
+
+    @property
+    def environment(self) -> IEnvironment:
+        """Get the environment."""
+        return self.__environment
+
+    @property
+    def host(self) -> object:
+        raise NotImplementedError()
+
+    @property
+    def logging(self) -> object:
+        raise NotImplementedError()
+
+    @property
+    def services(self) -> object:
+        raise NotImplementedError()
+
+    @property
+    def web_host(self) -> object:
+        raise NotImplementedError()
 
     def build(self) -> DesktopApplication:
         """Build the application."""
@@ -108,14 +136,7 @@ class DesktopApplicationBuilder:
         QGuiApplication.setApplicationDisplayName(f"ApplicationDisplayName = {app_name} - {version}")
         QGuiApplication.setApplicationVersion(version)
 
-        app = DesktopApplication(
-            self.__args,
-            DesktopEnvironment(
-                environment_name=self.__environment_name,
-                content_root_path=Path(self.__content_root_path),
-                assets_path=self.__assets_path,
-            ),
-        )
+        app = DesktopApplication(self.__args, self.environment)
 
         return app
 
