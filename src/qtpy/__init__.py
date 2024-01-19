@@ -5,7 +5,8 @@ from picologging import DEBUG, Logger, getLogger
 from PySide6.QtGui import QGuiApplication, QIcon
 from PySide6.QtQml import QQmlApplicationEngine
 
-from .environments import DesktopEnvironment, IEnvironment
+from .abstractions import IEnvironment
+from .environments import DesktopEnvironment
 from .project import PythonProject
 
 
