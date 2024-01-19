@@ -308,5 +308,12 @@
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
   },
-  "cSpell.words": ["levelname", "MVVM", "picologging", "qtpy", "richillcapital"]
+  "cSpell.words": [
+    "assertpy",
+    "levelname",
+    "MVVM",
+    "picologging",
+    "qtpy",
+    "richillcapital"
+  ]
 }

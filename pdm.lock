@@ -5,7 +5,15 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
 lock_version = "4.4.1"
-content_hash = "sha256:f5a8b0cf40c7d9488322a01bbe199c6b80e93a5b34c9ccdf94bbc4352218d880"
+content_hash = "sha256:f97bb1dd5b93c3b50ebb57027d06599971bfa4ea7958878d27ca0e7c5048f18f"
+
+[[package]]
+name = "assertpy"
+version = "1.1"
+summary = "Simple assertion library for unit testing in python with a fluent API"
+files = [
+    {file = "assertpy-1.1.tar.gz", hash = "sha256:acc64329934ad71a3221de185517a43af33e373bb44dc05b5a9b174394ef4833"},
+]
 
 [[package]]
 name = "colorama"
