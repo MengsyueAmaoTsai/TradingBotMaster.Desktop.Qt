@@ -2,15 +2,16 @@ import sys
 
 import picologging
 from picologging import DEBUG, Logger, getLogger
-from PySide6.QtGui import QGuiApplication, QIcon
+from PySide6.QtGui import QIcon
 from PySide6.QtQml import QQmlApplicationEngine
+from PySide6.QtWidgets import QApplication
 
 from .abstractions import IEnvironment
 from .environments import DesktopEnvironment
 from .project import PythonProject
 
 
-class DesktopApplication(QGuiApplication):
+class DesktopApplication(QApplication):
     """Desktop application."""
 
     def __init__(self, args: list[str], environment: IEnvironment) -> None:
@@ -125,11 +126,11 @@ class DesktopApplicationBuilder:
         app_name = self.__app_name or PythonProject.name()
         version = PythonProject.version()
 
-        QGuiApplication.setOrganizationName("Richill Capital")
-        QGuiApplication.setOrganizationDomain("richillcapital.com")
-        QGuiApplication.setApplicationName(f"ApplicationName = {app_name} - {version}")
-        QGuiApplication.setApplicationDisplayName(f"ApplicationDisplayName = {app_name} - {version}")
-        QGuiApplication.setApplicationVersion(version)
+        QApplication.setOrganizationName("Richill Capital")
+        QApplication.setOrganizationDomain("richillcapital.com")
+        QApplication.setApplicationName(f"ApplicationName = {app_name} - {version}")
+        QApplication.setApplicationDisplayName(f"ApplicationDisplayName = {app_name} - {version}")
+        QApplication.setApplicationVersion(version)
 
         app = DesktopApplication(self.__args, self.environment)
 
